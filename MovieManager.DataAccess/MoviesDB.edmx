@@ -14,9 +14,9 @@
         </EntityType>
         <EntityType Name="MovieReviews">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="MovieId" />
+            <PropertyRef Name="ReviewId" />
           </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="MovieId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ReviewId" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
