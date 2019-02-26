@@ -49,10 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>MoviesDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CategoryRepository.cs" />
+    <Compile Include="Movie.cs">
+      <DependentUpon>MoviesDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MovieRepository.cs" />
     <Compile Include="MoviesDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,13 +73,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MoviesDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Movy.cs">
-      <DependentUpon>MoviesDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs">
       <DependentUpon>MoviesDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReviewRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MovieManager.DataContracts\MovieManager.DataContracts.csproj">

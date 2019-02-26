@@ -105,7 +105,7 @@
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Movies" Relationship="Self.FK_Movies_Categories" FromRole="Categories" ToRole="Movies" />
         </EntityType>
-        <EntityType Name="Movy">
+        <EntityType Name="Movie">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -129,7 +129,7 @@
         </EntityType>
         <Association Name="FK_Movies_Categories">
           <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
-          <End Role="Movies" Type="Self.Movy" Multiplicity="*" />
+          <End Role="Movies" Type="MoviesDBModel.Movie" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">
               <PropertyRef Name="Id" />
@@ -140,19 +140,19 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="MovieReviews">
-          <End Role="Movies" Type="Self.Movy" Multiplicity="*" />
+          <End Role="Movies" Type="MoviesDBModel.Movie" Multiplicity="*" />
           <End Role="Reviews" Type="Self.Review" Multiplicity="*" />
         </Association>
         <EntityContainer Name="MoviesDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Category" />
-          <EntitySet Name="Movies" EntityType="Self.Movy" />
+          <EntitySet Name="Movies1" EntityType="MoviesDBModel.Movie" />
           <EntitySet Name="Reviews" EntityType="Self.Review" />
           <AssociationSet Name="FK_Movies_Categories" Association="Self.FK_Movies_Categories">
             <End Role="Categories" EntitySet="Categories" />
-            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Movies" EntitySet="Movies1" />
           </AssociationSet>
           <AssociationSet Name="MovieReviews" Association="Self.MovieReviews">
-            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Movies" EntitySet="Movies1" />
             <End Role="Reviews" EntitySet="Reviews" />
           </AssociationSet>
         </EntityContainer>
@@ -170,8 +170,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Movies">
-            <EntityTypeMapping TypeName="MoviesDBModel.Movy">
+          <EntitySetMapping Name="Movies1">
+            <EntityTypeMapping TypeName="MoviesDBModel.Movie">
               <MappingFragment StoreEntitySet="Movies">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

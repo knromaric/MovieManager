@@ -12,10 +12,10 @@ namespace MovieManager.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Movy
+    public partial class Movie
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Movy()
+        public Movie()
         {
             this.Reviews = new HashSet<Review>();
         }

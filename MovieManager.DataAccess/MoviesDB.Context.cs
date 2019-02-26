@@ -26,7 +26,7 @@ namespace MovieManager.DataAccess
         }
     
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Movy> Movies { get; set; }
+        public virtual DbSet<Movie> Movies { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
     }
 }
