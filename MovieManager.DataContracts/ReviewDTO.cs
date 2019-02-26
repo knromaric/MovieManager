@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MovieManager.DataContracts
 {
-    public class Class1
+    public class ReviewDTO
     {
+        public Guid Id { get; set; }
+        public int Score { get; set; }
     }
 }
