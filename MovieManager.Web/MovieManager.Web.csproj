@@ -170,7 +170,10 @@
     <Compile Include="Areas\API\Controllers\CategoryController.cs" />
     <Compile Include="Areas\API\Controllers\MovieController.cs" />
     <Compile Include="Areas\API\Controllers\ReviewController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +205,19 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Theme\css\all.min.css" />
+    <Content Include="Theme\css\bootstrap.min.css" />
+    <Content Include="Theme\css\sb-admin-2.min.css" />
+    <Content Include="Theme\webfonts\fa-brands-400.svg" />
+    <Content Include="Theme\webfonts\fa-regular-400.svg" />
+    <Content Include="Theme\webfonts\fa-solid-900.svg" />
+    <Content Include="Theme\js\bootstrap.bundle.min.js" />
+    <Content Include="Theme\js\chart-area-demo.js" />
+    <Content Include="Theme\js\chart-pie-demo.js" />
+    <Content Include="Theme\js\Chart.min.js" />
+    <Content Include="Theme\js\jquery.easing.min.js" />
+    <Content Include="Theme\js\jquery.min.js" />
+    <Content Include="Theme\js\sb-admin-2.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -216,6 +232,25 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Theme\webfonts\fa-brands-400.eot" />
+    <Content Include="Theme\webfonts\fa-brands-400.ttf" />
+    <Content Include="Theme\webfonts\fa-brands-400.woff" />
+    <Content Include="Theme\webfonts\fa-brands-400.woff2" />
+    <Content Include="Theme\webfonts\fa-regular-400.eot" />
+    <Content Include="Theme\webfonts\fa-regular-400.ttf" />
+    <Content Include="Theme\webfonts\fa-regular-400.woff" />
+    <Content Include="Theme\webfonts\fa-regular-400.woff2" />
+    <Content Include="Theme\webfonts\fa-solid-900.eot" />
+    <Content Include="Theme\webfonts\fa-solid-900.ttf" />
+    <Content Include="Theme\webfonts\fa-solid-900.woff" />
+    <Content Include="Theme\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Review\Details.cshtml" />
+    <Content Include="Views\Review\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
