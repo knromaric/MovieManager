@@ -15,17 +15,20 @@
     <link href="~/Theme/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body id="page-top">
-    @Html.Partial("_Navigation")
-    <div id="wrapper">
-        <div id="content-wrapper" class="d-flex flex-column" >
-            <div id="content">
-                @RenderBody()
-            </div>
+    <div id="wrapper" class="d-flex flex-row">
+        @Html.Partial("_Navigation")
+        <div id="content-wrapper" class="d-flex flex-column">
+
+
+            @RenderBody()
+
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+
         </div>
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
     </div>
 
     <!-- Bootstrap core JavaScript-->

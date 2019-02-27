@@ -1,7 +1,65 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">List Of Movies</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Rating</th>
+                        <th>Score</th>
+                        <th>Release Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+          
+                <tbody id="movies-tbody">
+                    
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-<h2>Index</h2>
+@section scripts{
+<script>
+    $.ajax({
+        url: "http://localhost:57331/api/movies/getallmovies",
+        method: "GET",
+        success: function (result) {
+            for (var i = 0; i < result.length; i++) {
+                var newRow = "<tr><td><a href='/movies/details?id=" + result[i].Id + "'>" + result[i].Title + "</a></td><td>" + result[i].CategoryName + "</td><td>" + result[i].Rating + "</td><td>" + result[i].AverageScore + "</td><td>" + result[i].ReleaseDate + "</td><td><button class='btn btn-danger delete' data-id='" + result[i].Id + "'>Delete</button></td></tr>"
+                $('#movies-tbody').append(newRow);
+            }
+
+            $('.delete').click(function () {
+                //click event body
+                var id = $(this).data('id');
+                var tr = $(this).parent().parent();
+
+                $.ajax({
+                    url: "http://localhost:57331/api/movies/" + id,
+                    method: 'DELETE',
+                    success: function () {
+                        tr.hide('slow', function () {
+                            tr.remove();
+                        })
+                    },
+                    error: function (err) {
+                        alert('error: delete')
+                    }
+                })
+            })
+            
+        },
+        error: function (err) {
+            alert('error occcured');
+        }
+    })
+</script>
+}
 
