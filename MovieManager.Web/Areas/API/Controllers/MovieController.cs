@@ -40,8 +40,8 @@ namespace MovieManager.Web.Areas.API.Controllers
         }
 
         [HttpPost]
-        [Route("{id}")]
-        public void AddMovie([FromBody] MovieDTO movie, Guid id)
+        [Route("")]
+        public void AddMovie([FromBody] MovieDTO movie)
         {
             _movieManagement.AddOrUpdateMovie(movie);
         }

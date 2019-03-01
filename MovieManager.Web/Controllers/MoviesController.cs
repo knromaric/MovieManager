@@ -18,5 +18,10 @@ namespace MovieManager.Web.Controllers
         {
             return View(id);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }

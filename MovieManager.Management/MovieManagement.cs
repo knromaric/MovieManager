@@ -57,7 +57,7 @@ namespace MovieManager.Management
                 ReleaseDate = newMovie.ReleaseDate
             };
 
-            if (string.IsNullOrEmpty(newMovie.CategoryName))
+            if (!string.IsNullOrEmpty(newMovie.CategoryName))
             {
                 var categoryRepo = new CategoryRepository();
                 var existingMovie = categoryRepo.GetCategoryByName(newMovie.CategoryName);
